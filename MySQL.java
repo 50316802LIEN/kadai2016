@@ -8,22 +8,22 @@ import java.sql.Statement;
 
 public class MySQL {
 	
-	// JDBCドライバの登録
+	// JDBC�h���C�o�̓o�^
     String driver;
-    // データベースの指定
+    // �f�[�^�x�[�X�̎w��
     String server, dbname, url, user, password;
     Connection con;
     Statement stmt;
     ResultSet rs;
-    
-	public MySQL() {
-		this.driver  = "org.gjt.mm.mysql.Driver";
-		this.server  = "j11000.sangi01.net";      // MySQLサーバ ( IP または ホスト名 );
-		this.dbname  = "50316802";         // データベース名;
-		this.url = "jdbc:mysql://" + server + "/" + dbname + "?useUnicode=true&characterEncoding=UTF-8";
-		this.user = "50316802";         // データベース作成ユーザ名;
-		this.password  = "50316802";     // データベース作成ユーザパスワード;
-		
+    	
+public MySQL() {
+        this.driver = "org.gjt.mm.mysql.Driver";
+        this.server = "ms000.sist.ac.jp";
+        this.dbname = "java2016";
+        this.url = "jdbc:mysql://" + server + "/" + dbname + "?useUnicode=true&characterEncoding=UTF-8";
+        this.user = "java2016";
+        this.password = "java2016";
+   
 		try {
 			this.con = DriverManager.getConnection(url, user, password);
 			this.stmt = con.createStatement ();
@@ -56,7 +56,7 @@ public ResultSet getReservation(String rdate, String facility){
 		String sql = "SELECT * FROM reservation WHERE date ='" + rdate + "' AND facility_name = '"+ facility +"' ORDER BY start_time;";
 		ResultSet rs = null;
 		try {
-			rs = stmt.executeQuery (sql);  //try catchで囲む
+			rs = stmt.executeQuery (sql);  //try catch�ň͂�
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -81,7 +81,7 @@ public ResultSet selectReservation(String rdate, String facility){
 	
 	String sql = "SELECT * FROM reservation WHERE facility_name ='" + facility +
 		      "' AND date = '" + rdate + "' ;";
-		      // クエリーを実行して結果のセットを取得
+		      // �N�G���[�����s���Č��ʂ̃Z�b�g���擾
 	ResultSet rs = null;
 	try {
 		rs = stmt.executeQuery(sql);
@@ -110,7 +110,7 @@ public ResultSet getReservationIn( String facility){
 	String sql = "SELECT * FROM reservation WHERE   facility_name = '"+ facility +"' ;";
 	ResultSet rs = null;
 	try {
-		rs = stmt.executeQuery (sql);  //try catchで囲む
+		rs = stmt.executeQuery (sql);  //try catch�ň͂�
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -123,7 +123,7 @@ public ResultSet getReservationAt( String userid){
 	String sql = "SELECT * FROM reservation WHERE   user_id = '"+ userid +"' ;";
 	ResultSet rs = null;
 	try {
-		rs = stmt.executeQuery (sql);  //try catchで囲む
+		rs = stmt.executeQuery (sql);  //try catch�ň͂�
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
