@@ -5,15 +5,15 @@ import java.awt.Choice;
 public class ChoiceFacility extends Choice{
 
 	ChoiceFacility(){
-		add("å°ãƒ›ãƒ¼ãƒ« ");
-		add(" å¤§ä¼šè­°å®¤1");
-		add(" å¤§ä¼šè­°å®¤2");
-		add(" å°ä¼šè­°å®¤1");
-		add(" å°ä¼šè­°å®¤2");
-		add(" å°ä¼šè­°å®¤3");
-		add(" å°ä¼šè­°å®¤4");
-		add(" å°ä¼šè­°å®¤5");
-		add(" å°ä¼šè­°å®¤6");
+		add("¬ƒz[ƒ‹ ");
+		add(" ‘å‰ï‹cº1");
+		add(" ‘å‰ï‹cº2");
+		add(" ¬‰ï‹cº1");
+		add(" ¬‰ï‹cº2");
+		add(" ¬‰ï‹cº3");
+		add(" ¬‰ï‹cº4");
+		add(" ¬‰ï‹cº5");
+		add(" ¬‰ï‹cº6");
 	}
 
 }

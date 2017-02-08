@@ -8,9 +8,9 @@ import java.sql.Statement;
 
 public class MySQL {
 	
-	// JDBCãƒ‰ãƒ©ã‚¤ãƒã®ç™»éŒ²
+	// JDBCƒhƒ‰ƒCƒo‚Ì“o˜^
     String driver;
-    // ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®æŒ‡å®š
+    // ƒf[ƒ^ƒx[ƒX‚Ìw’è
     String server, dbname, url, user, password;
     Connection con;
     Statement stmt;
@@ -18,11 +18,11 @@ public class MySQL {
     
 	public MySQL() {
 		this.driver  = "org.gjt.mm.mysql.Driver";
-		this.server  = "j11000.sangi01.net";      // MySQLã‚µãƒ¼ãƒ ( IP ã¾ãŸã¯ ãƒ›ã‚¹ãƒˆå );
-		this.dbname  = "50316802";         // ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹å;
+		this.server  = "j11000.sangi01.net";      // MySQLƒT[ƒo ( IP ‚Ü‚½‚Í ƒzƒXƒg–¼ );
+		this.dbname  = "50316802";         // ƒf[ƒ^ƒx[ƒX–¼;
 		this.url = "jdbc:mysql://" + server + "/" + dbname + "?useUnicode=true&characterEncoding=UTF-8";
-		this.user = "50316802";         // ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ä½œæˆãƒ¦ãƒ¼ã‚¶å;
-		this.password  = "50316802";     // ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ä½œæˆãƒ¦ãƒ¼ã‚¶ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰;
+		this.user = "50316802";         // ƒf[ƒ^ƒx[ƒXì¬ƒ†[ƒU–¼;
+		this.password  = "50316802";     // ƒf[ƒ^ƒx[ƒXì¬ƒ†[ƒUƒpƒXƒ[ƒh;
 		
 		try {
 			this.con = DriverManager.getConnection(url, user, password);
@@ -56,7 +56,7 @@ public ResultSet getReservation(String rdate, String facility){
 		String sql = "SELECT * FROM reservation WHERE date ='" + rdate + "' AND facility_name = '"+ facility +"' ORDER BY start_time;";
 		ResultSet rs = null;
 		try {
-			rs = stmt.executeQuery (sql);  //try catchã§å›²ã‚€
+			rs = stmt.executeQuery (sql);  //try catch‚ÅˆÍ‚Ş
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -81,7 +81,7 @@ public ResultSet selectReservation(String rdate, String facility){
 	
 	String sql = "SELECT * FROM reservation WHERE facility_name ='" + facility +
 		      "' AND date = '" + rdate + "' ;";
-		      // ã‚¯ã‚¨ãƒªãƒ¼ã‚’å®Ÿè¡Œã—ã¦çµæœã®ã‚»ãƒƒãƒˆã‚’å–å¾—
+		      // ƒNƒGƒŠ[‚ğÀs‚µ‚ÄŒ‹‰Ê‚ÌƒZƒbƒg‚ğæ“¾
 	ResultSet rs = null;
 	try {
 		rs = stmt.executeQuery(sql);
@@ -110,7 +110,7 @@ public ResultSet getReservationIn( String facility){
 	String sql = "SELECT * FROM reservation WHERE   facility_name = '"+ facility +"' ;";
 	ResultSet rs = null;
 	try {
-		rs = stmt.executeQuery (sql);  //try catchã§å›²ã‚€
+		rs = stmt.executeQuery (sql);  //try catch‚ÅˆÍ‚Ş
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -123,7 +123,7 @@ public ResultSet getReservationAt( String userid){
 	String sql = "SELECT * FROM reservation WHERE   user_id = '"+ userid +"' ;";
 	ResultSet rs = null;
 	try {
-		rs = stmt.executeQuery (sql);  //try catchã§å›²ã‚€
+		rs = stmt.executeQuery (sql);  //try catch‚ÅˆÍ‚Ş
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
