@@ -18,7 +18,7 @@ public class MySQL {
     
 	public MySQL() {
 		this.driver  = "org.gjt.mm.mysql.Driver";
-		this.server  = "j11000.sangi01.net";      // MySQLサーバ ( IP または ホスト名 );
+		this.server  = "ms000.sist.ac.jp";      // MySQLサーバ ( IP または ホスト名 );
 		this.dbname  = "50316802";         // データベース名;
 		this.url = "jdbc:mysql://" + server + "/" + dbname + "?useUnicode=true&characterEncoding=UTF-8";
 		this.user = "50316802";         // データベース作成ユーザ名;
